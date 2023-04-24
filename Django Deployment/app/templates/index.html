@@ -1,0 +1,247 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop</title>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  background-image: url("/static/1.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-position: center;
+  mask-position: 20px;
+}
+.container {
+  width: 100%;
+  height: 20vh;
+  display: flex;  
+  justify-content: center;
+}
+nav {
+  background: #e4c6c600;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  font-size: 1.5rem;
+  padding: 0 10px;
+  margin: 0 20px;
+  cursor: pointer;
+  position: relative;
+}
+nav ul li:after {
+  content: "";
+  width: 0;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  transition: 0.5s;
+}
+nav ul li:hover::after {
+  width: 100%;
+}
+#one{
+    margin-left: 620px;
+    margin-top: -70px;
+    font-size: 40px;
+}
+#two{
+    border-radius: 5px;
+    position: relative;
+}
+#l{
+  color: black;
+}
+
+:root {
+  --gray: grey;
+  --black: #000;
+  --white: #fff;
+  --green: hsl(85, 88%, 51%);
+
+  // default colors
+  --body-background: #fff;
+  --hover-color: grey;
+  --header-background: #000;
+  --anchor-color: #fff;
+  --heading-color: #b2b2b2;
+  --paragraph-color: #b2b2b2;
+  --anchor-active-color: #91f600;
+}  
+
+.title {
+font-family: 'Poppins';
+  font-size: 1.2em;
+}
+
+.green {
+  color: var(--green);
+}
+
+.white {
+  color: var(--white);
+font-size: .8em;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--body-background);
+  font-family: 'Raleway';
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.active {
+  color: var(--anchor-active-color);
+  font-weight: var(--anchor-active-font-weight);
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+header {
+align-items: center;
+  display: flex;
+  background-color: var(--header-background);
+  justify-content: space-around;
+  flex-flow: row wrap;
+  padding: 1em 0;
+  width: 1700px;
+}
+
+.section {
+  flex-grow: 1;
+}
+
+.section.logo {
+  margin-left: 2.5em;
+}
+
+.logo {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 500px;
+  margin-left: 60;
+  padding: 100;
+}
+
+ul li {
+  flex-grow: 1;
+  text-align: center;
+  width: 70px;
+}
+
+ul li a {
+  color: var(--anchor-color);
+  font-size: .9rem;
+  text-transform: uppercase;
+}
+
+header div:nth-child(1) {
+  flex-grow: 8;
+}
+
+header div:nth-child(1) img {
+  margin-left: 25px;
+}
+
+.box-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media all and (max-width: 800px) {
+  header {
+      justify-content: space-around;
+  }
+
+  .container {
+      padding: 50px;
+  }
+}
+
+@media only screen and (max-width:542px) {
+  header div:nth-child(1) {
+      margin: 0 auto;
+      display: block;
+      padding-bottom: 0;
+  }
+
+  header {
+      flex-direction: column;
+  }
+
+  .section {
+      flex-grow: 1;
+      text-align: center;
+  }
+
+  .section.logo {
+      margin: 0;
+  }
+
+  ul {
+      background-color: #232323;
+      width: 100%;
+      margin-top: 15px;
+  }
+
+  ul li {
+      width: 50%;
+      padding: 5px;
+  }
+}
+
+</style>
+<body>
+  <body>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+    
+     <header class="box-shadow">
+        <div class="section logo">
+          <span class="white">The</span><span class="title green">Farmer</span><span class="white">Friend</span>
+        </div>
+    
+        <div class="section">
+          <ul>
+            <li><a href="{% url 'landingpage' %}">Home</a></li>
+            <li><a href="{% url 'prediction_crop' %}">Prediction</a></li>       
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+        </div>
+      </header>
+</body>
+</html>

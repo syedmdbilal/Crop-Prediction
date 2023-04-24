@@ -1,0 +1,472 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        background:url("/static/plant2.jpg");
+        text-align: center;
+        text-transform: uppercase;
+        position: fixed;
+        object-position: center;
+        
+      }
+      
+      .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #aaa;
+        margin: 20px 0;
+        padding: 10px;
+        width: 100%;
+        min-height: 200px;
+        border: 2px #ccc solid;
+        color: #fff;
+      }
+      #one{
+        padding-bottom: 20px;
+        padding-left: -20%;
+        padding-right: -90%;
+        display: flex;
+        height: 600px;
+        border-style: inset;
+        align-items: center;
+        box-sizing:unset;
+        border-radius: 20px;
+        border-color: white;
+        align-items:center;
+        border-width: 5px;
+      }
+      #two{
+        padding-bottom: 20px;
+        display: flex;
+        height: 620px;
+        border-style: inset;
+        align-items: center;
+        border-radius: 20px;
+        border-color:white;
+        box-shadow: inset;
+        margin-left: 700px;
+        margin-top: -620px;
+
+      }
+      #button{
+        padding: 10px;
+        margin-bottom: -20%;
+        border-radius: 20px;
+        margin-top: 100px;
+        
+      }
+      #three{
+        margin-left: 150px;
+        padding-bottom: 60px;
+        color: whitesmoke;
+      }
+      #img{
+        border-radius: 20px;
+      }
+      #des{
+        color: black;
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        font-weight: 100;
+        padding-top: 20px;
+        margin-top: 20%;
+        font-size: xx-large;
+        width: 200px;
+        height: 300px;
+        text-shadow: #ccc;
+        text-size-adjust: inherit;
+      }
+      #des1{
+        color: skyblue;
+        border-radius:20px;
+        width: 100px;
+        margin-left: 90px;
+      }
+      :root {
+        --gray: grey;
+        --black: #000;
+        --white: #fff;
+        --green: hsl(85, 88%, 51%);
+    
+        // default colors
+        --body-background: #fff;
+        --hover-color: grey;
+        --header-background: #000;
+        --anchor-color: #fff;
+        --heading-color: #b2b2b2;
+        --paragraph-color: #b2b2b2;
+        --anchor-active-color: #91f600;
+    }  
+    
+    .title {
+      font-family: 'Poppins';
+        font-size: 1.2em;
+    }
+    
+    .green {
+        color: var(--green);
+    }
+    
+    .white {
+        color: var(--white);
+      font-size: .8em;
+    }
+    
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        background-color: var(--body-background);
+        font-family: 'Raleway';
+        height: 100%;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    a.active {
+        color: var(--anchor-active-color);
+        font-weight: var(--anchor-active-font-weight);
+    }
+    
+    a:hover {
+        color: var(--hover-color);
+    }
+    
+    header {
+      align-items: center;
+        display: flex;
+        background-color: var(--header-background);
+        justify-content: space-around;
+        flex-flow: row wrap;
+        padding: 1em 0;
+        width: 730px;
+    }
+    
+    .section {
+        flex-grow: 1;
+    }
+    
+    .section.logo {
+        margin-left: 2.5em;
+    }
+    
+    .logo {
+        font-size: 1.2em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-flow: row nowrap;
+        width: 500px;
+        margin-left: 60;
+        padding: 100;
+    }
+    
+    ul li {
+        flex-grow: 1;
+        text-align: center;
+        width: 70px;
+    }
+    
+    ul li a {
+        color: var(--anchor-color);
+        font-size: .9rem;
+        text-transform: uppercase;
+    }
+    
+    header div:nth-child(1) {
+        flex-grow: 8;
+    }
+    
+    header div:nth-child(1) img {
+        margin-left: 25px;
+    }
+    
+    .box-shadow {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    @media all and (max-width: 800px) {
+        header {
+            justify-content: space-around;
+        }
+    
+        .container {
+            padding: 50px;
+        }
+    }
+    
+    @media only screen and (max-width:542px) {
+        header div:nth-child(1) {
+            margin: 0 auto;
+            display: block;
+            padding-bottom: 0;
+        }
+    
+        header {
+            flex-direction: column;
+        }
+    
+        .section {
+            flex-grow: 1;
+            text-align: center;
+        }
+    
+        .section.logo {
+            margin: 0;
+        }
+    
+        ul {
+            background-color: #232323;
+            width: 100%;
+            margin-top: 15px;
+        }
+    
+        ul li {
+            width: 50%;
+            padding: 5px;
+        }
+    }
+    :root {
+        --gray: grey;
+        --black: #000;
+        --white: #fff;
+        --green: hsl(85, 88%, 51%);
+      
+        // default colors
+        --body-background: #fff;
+        --hover-color: grey;
+        --header-background: #000;
+        --anchor-color: #fff;
+        --heading-color: #b2b2b2;
+        --paragraph-color: #b2b2b2;
+        --anchor-active-color: #91f600;
+      }  
+      
+      .title {
+      font-family: 'Poppins';
+        font-size: 1.2em;
+      }
+      
+      .green {
+        color: var(--green);
+      }
+      
+      .white {
+        color: var(--white);
+      font-size: .8em;
+      }
+      
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        background-color: var(--body-background);
+        font-family: 'Raleway';
+        height: 100%;
+      }
+      
+      a {
+        text-decoration: none;
+      }
+      
+      a.active {
+        color: var(--anchor-active-color);
+        font-weight: var(--anchor-active-font-weight);
+      }
+      
+      a:hover {
+        color: var(--hover-color);
+      }
+      
+      header {
+      align-items: center;
+        display: flex;
+        background-color: var(--header-background);
+        justify-content: space-around;
+        flex-flow: row wrap;
+        padding: 1em 0;
+        width: 1700px;
+      }
+      
+      .section {
+        flex-grow: 1;
+      }
+      
+      .section.logo {
+        margin-left: 2.5em;
+      }
+      
+      .logo {
+        font-size: 1.2em;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-flow: row nowrap;
+        width: 500px;
+        margin-left: 60;
+        padding: 100;
+      }
+      
+      ul li {
+        flex-grow: 1;
+        text-align: center;
+        width: 70px;
+      }
+      
+      ul li a {
+        color: var(--anchor-color);
+        font-size: .9rem;
+        text-transform: uppercase;
+      }
+      
+      header div:nth-child(1) {
+        flex-grow: 8;
+      }
+      
+      header div:nth-child(1) img {
+        margin-left: 25px;
+      }
+      
+      .box-shadow {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      
+      @media all and (max-width: 800px) {
+        header {
+            justify-content: space-around;
+        }
+      
+        .container {
+            padding: 50px;
+        }
+      }
+      
+      @media only screen and (max-width:542px) {
+        header div:nth-child(1) {
+            margin: 0 auto;
+            display: block;
+            padding-bottom: 0;
+        }
+      
+        header {
+            flex-direction: column;
+        }
+      
+        .section {
+            flex-grow: 1;
+            text-align: center;
+        }
+      
+        .section.logo {
+            margin: 0;
+        }
+      
+        ul {
+            background-color: #232323;
+            width: 100%;
+            margin-top: 15px;
+        }
+      
+        ul li {
+            width: 50%;
+            padding: 5px;
+        }
+      }
+
+      
+</style>
+<body>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+    
+     <header class="box-shadow">
+        <div class="section logo">
+          <span class="white">The</span><span class="title green">Farmer</span><span class="white">Friend</span>
+        </div>
+    
+        <div class="section">
+          <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'prediction_crop' %}">Nutrio</a></li>
+            <li><a href="{% url 'home' %}">Plant Disease</a></li>        
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          </ul>
+        </div>
+      </header>
+</body>
+<center><h1 style="color: whitesmoke;">Plant intensity level classification</h1></center><br>
+
+<div class="row">
+    <div class="container">
+        <div class="col-sm-5 col-md-6" id="one" style="border-color:g;">
+            <h1 style="color: whitesmoke;">Upload Image</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" Value='Launch' id="button" style="margin-right: 200px;">
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-sm-5 col-md-6" id="two">
+            {% if obj %}
+                <center>
+                    <center><h1 id="three">Test Image</h1></center>
+                    <center><img src="{{ obj.image.url }}" height="250" width="250" style="margin-left: 130px;" id="img"></center><br>
+                    <p></p><br>
+                
+                    <p></p>
+                    <h2 style="color:white;font-size:larger;margin-left: 130px;">{{predict | upper}}</h2>
+                    <br>
+                    <br>
+                    {% if predict == 'Anthracnose' %}
+                        <button id="des1"><a href="{% url 'Anthracnose' %}" >Description</a></button>
+                    {% elif predict == 'Bacterial Canker'%}
+                        <button id="des1"><a href="{% url 'Bacterial_Canker' %}" >Description</a></button>
+                    {% elif predict == 'Cutting Weevil'%}
+                        <button id="des1"><a href="{% url 'Cutting_Weevil' %}" >Description</a></button>
+                    {% elif predict == 'Die Back'%}
+                        <button id="des1"><a href="{% url 'Die_Back' %}" >Description</a></button>
+                    {% elif predict == 'Gall Midge'%}
+                        <button id="des1"><a href="{% url 'Gall_Midge' %}" >Description</a></button> 
+                    {% elif predict == 'Powdery Mildew'%}
+                        <button id="des1"><a href="{% url 'Powdery_Mildew' %}" >Description</a></button>
+                    {% elif predict == 'Sooty Mould'%}
+                        <button id="des1"><a href="{% url 'Sooty_Mould' %}" >Description</a></button>
+                    {% endif %}
+                </center>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+
+</html>
